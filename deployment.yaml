@@ -1,0 +1,20 @@
+apiVersion:app/v1
+kind:Deployment
+metadata:
+name:registration-deployment
+spec:
+replicas:4
+selector:
+matchLabels:
+app:registration
+template:
+metadata:
+labels:
+app:registration
+spec:
+containers:
+- name:registration
+image:jyotshna2884/registration:v1
+ports:
+- containerPort=5000
+	
