@@ -5,9 +5,8 @@ metadata:
 spec:
   selector:
     app: registration
-  type: NodePort
   ports:
-  - protocol: TCP
-    port: 5000
-    targetPort: 5000
-    nodePort: 30050
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: NodePort
