@@ -6,9 +6,7 @@ spec:
   selector:
     app: registration
   ports:
-   - protocol: TCP
-     port: 5000
-     targetPort: 5000
-     type: NodePort
-      
-
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: NodePort
