@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: registration-service
 spec:
+  type: NodePort
   selector:
     app: registration
   ports:
     - protocol: TCP
       port: 5000
       targetPort: 5000
-  type: NodePort
+      nodePort: 30050
