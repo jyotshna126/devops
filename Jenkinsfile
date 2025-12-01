@@ -1,24 +1,26 @@
 pipeline{
 agent any
 stages{
-stage("Clone repository"){
-steps{
-git url:'https://github.com/jyotshna126/devops.git',branch:'master'
-}
-}
-stage("Build docker images"){
+stage("Build docker image"){
 steps{
 bat 'docker build -t registration:v1 .'
 }
 }
-stage("run docker image"){
+stage("push to docker hub"){
 steps{
-bat 'docker rm -f registration-container || exit 0'
-bat 'docker run -d -p 5000:5000 --name registration-container registration:v1'
+bat 'docker tag registration:v1 jyotshna2884/registration:v1'
+bat 'docker push jyotshna2884/registration:v1'
+}
+}
+stage("deploy to kubernetes"){
+steps{
+bat 'kubectl apply -f F:\devops\deployment.yaml'
+bat 'kubectl apply -f F:\devops\service.yaml'
 }
 }
 }
 }
+
 
 
 
