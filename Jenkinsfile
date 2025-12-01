@@ -14,12 +14,13 @@ bat 'docker push jyotshna2884/registration:v1'
 }
 stage("deploy to kubernetes"){
 steps{
-bat 'kubectl apply -f F:\devops\deployment.yaml'
-bat 'kubectl apply -f F:\devops\service.yaml'
+bat 'kubectl apply -f F:\\devops\\deployment.yaml'
+bat 'kubectl apply -f F:\\devops\\service.yaml'
 }
 }
 }
 }
+
 
 
 
