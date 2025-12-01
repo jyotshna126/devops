@@ -8,7 +8,7 @@ git url:'https://github.com/jyotshna126/devops.git',branch:'master'
 }
 stage("Build docker images"){
 steps{
-bat 'docker build -t registartion:v1'
+bat 'docker build -t registartion:v1 .'
 }
 }
 stage("run docker image"){
@@ -19,3 +19,4 @@ bat 'docker run -d -p 5000:5000 --name registration:container registration:v1'
 }
 }
 }
+
